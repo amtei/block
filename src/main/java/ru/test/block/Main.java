@@ -4,12 +4,15 @@ package ru.test.block;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-       GenerateBlock generateBlock=new GenerateBlock();
-       generateBlock.setBlocks();
-       generateBlock.setBlocks(); // todo зачем два раза метод вызывается
-        System.out.println( generateBlock.compareAll());
+        GenerateBlock generateBlock = new GenerateBlock();
+        generateBlock.setBlocks();
+        generateBlock.setBlocks(); // todo зачем два раза метод вызывается
 
+        //todo цикл делай здесь а не в сервисе GenerateBlock
+        // GenerateBlock должен соблюдать принцип одной ответственности (сгенерить один блок а не 5)
+        // если завтра нужно будет делать 10, тогда снова менять код ?????
 
+        System.out.println(generateBlock.compareAll());
 
 
     }

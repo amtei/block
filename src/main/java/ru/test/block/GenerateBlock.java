@@ -34,6 +34,7 @@ public class GenerateBlock {
     }
 
 
+    // todo для чего переопределил ? ты где то сравниваешь объекты GenerateBlock
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -41,11 +42,13 @@ public class GenerateBlock {
         return Objects.equals(s, that.s);
     }
 
+    // todo для чего переопределил ? ты где то сравниваешь объекты GenerateBlock
     @Override
     public int hashCode() {
         return Objects.hash(s);
     }
 
+    //todo прочти ниже описание
     /***
      * Функция проверки должна вызываться каждый раз при вставки блока
      * например:
@@ -55,7 +58,8 @@ public class GenerateBlock {
      */
 
     public boolean compareAll() { //todo херь какая то, зачем проверять 1 блок со всеми, а потом 2 блок со всеми потом 3 блок со свсеми и т.д.
-        //todo нужно проверить только prevHash блока N(3) c hash блока N-1(2), потом делать  prevHash блока N(2) c  hash блока N-1(1) и т.д.
+        //todo нужно проверить только prevHash блока N (например: 3) c hash блока N-1 (это 2),
+        // потом делать тоже самое с prevHash блока N (теперь он стал 2) c  hash блока N-1 (здесь 1) и т.д.
         for (int i = 1; i < blocks.size(); i++) {
             for (int j = 0; j < blocks.size(); j++) {
                 if (blocks.get(j).getHash().equals(blocks.get(i).getPrevHash())) {
